@@ -1,11 +1,17 @@
-import React from 'react';
-import {AreaChartOutlined} from '@ant-design/icons';
+import darkLogo from '../assets/images/image.png'
+// import lightLogo from '../assets/images/lightMode.png'
 
-const Logo = () => {
+
+const Logo = ({darkTheme}) => {
     return(
         <div className="logo">
             <div className="logo-icon">
-                <AreaChartOutlined />
+                <img 
+                // src={darkTheme? darkLogo : lightLogo}
+                src={darkLogo}
+                alt="Logo"
+                style={{ filter: darkTheme ? 'invert(1)' : 'invert(0)' }} 
+                />
             </div>
         </div>
     );

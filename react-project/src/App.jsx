@@ -26,7 +26,7 @@ function App() {
     <>
         <Layout>
           <Sider collapsed={collapsed} collapsible trigger={null} className="sidebar" theme={darkTheme? 'dark' : 'light'}>
-            <Logo/>
+            <Logo darkTheme={darkTheme}/>
             <MenuList darkTheme={darkTheme}/>
           </Sider>
           <Layout>

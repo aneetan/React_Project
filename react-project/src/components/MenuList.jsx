@@ -10,7 +10,6 @@ import '../assets/css/menuList.css';
 const MenuList = ({ darkTheme }) => {
     const [selectedKeys, setSelectedKeys] = useState(['home'])
 
-
     const items = [
         {
             key: 'home',
