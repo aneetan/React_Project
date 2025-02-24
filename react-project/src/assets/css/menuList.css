@@ -1,0 +1,9 @@
+.menu-bar .ant-menu-item-selected{
+    background-color: #008080;
+    color: #fafafa;
+}
+
+.menu-bar-dark .ant-menu-item-selected{
+    background-color: #fafafa;
+    color: #008080;
+}
