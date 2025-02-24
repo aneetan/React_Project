@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'antd';
 import {
     HomeOutlined, ContactsOutlined, CoffeeOutlined, CopyOutlined,
     PieChartOutlined, FullscreenOutlined, CloseCircleOutlined,
     DingdingOutlined, AppleOutlined
 } from '@ant-design/icons';
+import '../assets/css/menuList.css';
 
 const MenuList = ({ darkTheme }) => {
+    const [selectedKeys, setSelectedKeys] = useState(['home'])
+
+
     const items = [
         {
             key: 'home',
@@ -68,8 +72,10 @@ const MenuList = ({ darkTheme }) => {
         <Menu
             theme={darkTheme ? 'dark' : 'light'}
             mode="inline"
-            className="menu-bar"
+            className={`menu-bar ${darkTheme ? 'menu-bar-dark' : ''}`}
             items={items}
+            selectedKeys={selectedKeys}
+            onSelect={({key}) => setSelectedKeys([key])}
         />
     );
 };
