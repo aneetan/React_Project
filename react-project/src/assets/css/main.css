@@ -55,12 +55,21 @@
     justify-content: space-between;
   }
   
+  .left-header{
+    display: flex;
+    justify-content: space-between;
+
+  }
   .toggle{
     padding: 10px;
   }
 
   .main-content {
     margin: 1rem;
+  }
+
+  .search-btn{
+    padding-top: 1rem;
   }
 
   

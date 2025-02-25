@@ -13,7 +13,6 @@ const ChangeThemeButton = ({darkTheme, changeTheme}) => {
             </Button>
         </div>
     )
-
 }
 
 export default ChangeThemeButton;

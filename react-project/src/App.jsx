@@ -7,6 +7,7 @@ import ToggleMenu from "./components/header/ToggleMenu";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import SupportLayout from "./components/sidebar/SupportLayout";
+import SearchBar from "./components/header/SearchBar";
 
 const {Header, Sider, Content} = Layout;
 
@@ -39,8 +40,13 @@ function App() {
 
           <Layout>
             <Header className="header" style={{background: headerBackground}}>
-              <ToggleMenu darkTheme={darkTheme} collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
-              <ChangeThemeButton darkTheme={darkTheme} changeTheme={changeTheme} />
+              <div className="left-header">
+                <ToggleMenu darkTheme={darkTheme} collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
+                <SearchBar/>
+              </div>
+              <div className="right-header">
+                <ChangeThemeButton darkTheme={darkTheme} changeTheme={changeTheme} />
+              </div>
             </Header>
 
             <Content className="main-content">
