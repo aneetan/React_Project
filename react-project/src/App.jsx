@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
 import SupportLayout from "./components/sidebar/SupportLayout";
 import SearchBar from "./components/header/SearchBar";
+import Notifications from "./components/header/Notifications";
 
 const {Header, Sider, Content} = Layout;
 
@@ -46,6 +47,7 @@ function App() {
               </div>
               <div className="right-header">
                 <ChangeThemeButton darkTheme={darkTheme} changeTheme={changeTheme} />
+                <Notifications/>
               </div>
             </Header>
 

@@ -55,10 +55,14 @@
     justify-content: space-between;
   }
   
-  .left-header{
+  .left-header,
+  .right-header{
     display: flex;
     justify-content: space-between;
 
+  }
+  .right-header{
+    margin-right: 2rem;
   }
   .toggle{
     padding: 10px;
