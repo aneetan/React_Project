@@ -1,13 +1,10 @@
-import darkLogo from '../assets/images/image.png'
-// import lightLogo from '../assets/images/lightMode.png'
-
+import darkLogo from '../../assets/images/image.png'
 
 const Logo = ({darkTheme}) => {
     return(
         <div className="logo">
             <div className="logo-icon">
                 <img 
-                // src={darkTheme? darkLogo : lightLogo}
                 src={darkLogo}
                 alt="Logo"
                 style={{ filter: darkTheme ? 'invert(1)' : 'invert(0)' }} 

@@ -1,43 +1,62 @@
 import { Layout, theme } from "antd";
-import Logo from "./components/Logo";
-import MenuList from "./components/MenuList";
+import Logo from "./components/sidebar/Logo";
+import MenuList from "./components/sidebar/MenuList";
 import { useState } from "react";
-import ChangeThemeButton from "./components/ChangeThemeButton";
-import ToggleMenu from "./components/ToggleMenu";
+import ChangeThemeButton from "./components/header/ChangeThemeButton";
+import ToggleMenu from "./components/header/ToggleMenu";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
 
-const {Header, Sider} = Layout;
-
+const {Header, Sider, Content} = Layout;
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(true)
+  const [darkTheme, setDarkTheme] = useState(false)
   const [collapsed, setCollapsed] = useState(true)
 
   const changeTheme = () => {
     setDarkTheme(!darkTheme)
-    console.log("Hello dark")
   }; 
 
   const {
-    token : {colorBgContainer},
+    token : {colorBgContainer, colorBgElevated},
   } = theme.useToken();
 
+  const headerBackground = darkTheme ? "#101828" : "#FFFFFF";
 
   return (
-    <>
         <Layout>
-          <Sider collapsed={collapsed} collapsible trigger={null} className="sidebar" theme={darkTheme? 'dark' : 'light'}>
+          <Sider
+          collapsed={collapsed}
+          collapsible
+          trigger={null}
+          className="sidebar"
+          theme={darkTheme? 'dark' : 'light'}
+          >
             <Logo darkTheme={darkTheme}/>
             <MenuList darkTheme={darkTheme}/>
           </Sider>
-          <Layout>
-            <Header className="header" style={{background: colorBgContainer}}>
-              <ToggleMenu collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
-              <ChangeThemeButton darkTheme={darkTheme} changeTheme={changeTheme} />
 
+          <Layout>
+            <Header className="header" style={{background: headerBackground}}>
+              <ToggleMenu collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
+              <ChangeThemeButton darkTheme={darkTheme? } changeTheme={changeTheme} />
             </Header>
+
+            <Content className="main-content">
+              <h2> Content </h2>
+              <Routes>
+                <Route path="/" element={<Home/>}> </Route>
+                <Route path="/calendar" element={<div> This is calendar </div>}> </Route>
+                <Route path="/chat" element={<div> This is chat </div>}> </Route>
+                <Route path="/facebook" element={<div> Facebook </div>}> </Route>
+                <Route path="/instagram" element={<div> Instagram </div>}> </Route>
+                <Route path="/tables" element={<div> This is tables</div>}> </Route>
+                <Route path="/profile" element={<div> This is profile </div>}> </Route>
+              </Routes>
+            </Content>
+
           </Layout>
         </Layout>
-    </>
   )
 }
 
