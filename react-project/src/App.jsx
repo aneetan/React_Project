@@ -6,6 +6,7 @@ import ChangeThemeButton from "./components/header/ChangeThemeButton";
 import ToggleMenu from "./components/header/ToggleMenu";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home";
+import SupportLayout from "./components/sidebar/SupportLayout";
 
 const {Header, Sider, Content} = Layout;
 
@@ -22,7 +23,7 @@ function App() {
   } = theme.useToken();
 
   const headerBackground = darkTheme ? "#101828" : "#FFFFFF";
-
+  //171F2F
   return (
         <Layout>
           <Sider
@@ -38,8 +39,8 @@ function App() {
 
           <Layout>
             <Header className="header" style={{background: headerBackground}}>
-              <ToggleMenu collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
-              <ChangeThemeButton darkTheme={darkTheme? } changeTheme={changeTheme} />
+              <ToggleMenu darkTheme={darkTheme} collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
+              <ChangeThemeButton darkTheme={darkTheme} changeTheme={changeTheme} />
             </Header>
 
             <Content className="main-content">
@@ -47,9 +48,13 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home/>}> </Route>
                 <Route path="/calendar" element={<div> This is calendar </div>}> </Route>
-                <Route path="/chat" element={<div> This is chat </div>}> </Route>
-                <Route path="/facebook" element={<div> Facebook </div>}> </Route>
-                <Route path="/instagram" element={<div> Instagram </div>}> </Route>
+                <Route path="/support">
+                  <Route path="chat" element={<div> This is chat </div>}> </Route>
+                  <Route path="contact">
+                    <Route path="facebook" element={<div> Facebook </div>}> </Route>
+                    <Route path="instagram" element={<div> Instagram </div>}> </Route>
+                  </Route>
+                </Route>
                 <Route path="/tables" element={<div> This is tables</div>}> </Route>
                 <Route path="/profile" element={<div> This is profile </div>}> </Route>
               </Routes>

@@ -23,27 +23,27 @@ const MenuList = ({ darkTheme }) => {
             label: 'Calendar',
         },
         {
-            key: 'submenu',
+            key: '/support',
             icon: <TeamOutlined />,
             label: 'Support',
             children: [
                 {
-                    key: '/chat',
+                    key: '/support/chat',
                     icon: <MessageOutlined />,
                     label: 'Chat',
                 },
                 {
-                    key: 'subtask',
+                    key: '/contact',
                     icon: <PhoneOutlined />,
                     label: 'Contact',
                     children: [
                         {
-                            key: '/facebook',
+                            key: '/support/contact/facebook',
                             icon: <FacebookOutlined />,
                             label: 'Facebook',
                         },
                         {
-                            key: '/instagram',
+                            key: '/support/contact/instagram',
                             icon: <InstagramOutlined />,
                             label: 'Instagram',
                         },
