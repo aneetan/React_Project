@@ -23,6 +23,7 @@ const ProfileDropDown = () => {
                     <Avatar className="dropdown dropdown-profile" src={Profile} />
                 {/* </Badge> */}
             </Dropdown>
+
         </div>
     )
 

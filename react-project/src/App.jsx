@@ -1,4 +1,4 @@
-import { Layout, theme } from "antd";
+import { Layout, Space, theme } from "antd";
 import Logo from "./components/sidebar/Logo";
 import MenuList from "./components/sidebar/MenuList";
 import { useState } from "react";
@@ -10,6 +10,7 @@ import SupportLayout from "./components/sidebar/SupportLayout";
 import SearchBar from "./components/header/SearchBar";
 import Notifications from "./components/header/Notifications";
 import ProfileDropDown from "./components/header/ProfileDropDown";
+import Cards from "./pages/Cards";
 
 const {Header, Sider, Content} = Layout;
 
