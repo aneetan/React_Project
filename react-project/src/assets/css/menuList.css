@@ -7,3 +7,7 @@
     background-color: #fafafa;
     color: #008080;
 }
+
+.ant-menu-submenu-title{
+    color: #008080 !important;
+}
