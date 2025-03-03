@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import SupportLayout from "./components/sidebar/SupportLayout";
 import SearchBar from "./components/header/SearchBar";
 import Notifications from "./components/header/Notifications";
+import ProfileDropDown from "./components/header/ProfileDropDown";
 
 const {Header, Sider, Content} = Layout;
 
@@ -43,11 +44,12 @@ function App() {
             <Header className="header" style={{background: headerBackground}}>
               <div className="left-header">
                 <ToggleMenu darkTheme={darkTheme} collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)}/>
-                <SearchBar/>
+                <SearchBar darkTheme={darkTheme}/>
               </div>
               <div className="right-header">
                 <ChangeThemeButton darkTheme={darkTheme} changeTheme={changeTheme} />
                 <Notifications/>
+                <ProfileDropDown/>
               </div>
             </Header>
 

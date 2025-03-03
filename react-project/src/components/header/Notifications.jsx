@@ -25,7 +25,7 @@ const Notifications = () => {
         <div>
             <Dropdown menu={{ items: menuItems }} trigger={['click']} placement="bottomRight" >
                 <Badge count={notifications.length}>
-                    <Avatar icon={<BellOutlined/>} />
+                    <Avatar className="dropdown" icon={<BellOutlined/>} />
                 </Badge>
             </Dropdown>
 
