@@ -82,14 +82,66 @@
   .dropdown-profile{
     margin: 1rem;
   }
-  
-  .cards-img{
-    width: 40px;
-    border-radius: 50%;
 
+  .cards{
+    width: 60%;
+    display: inline;
   }
 
+  .cards .cards-title{
+    text-transform: uppercase;
+  }
+
+  .card-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem;
+  }
+  .card-footer h3{
+    font-size: 20px;
+  }
+
+  .card-footer .stock-item{
+    padding: 4px;
+    background-color: #ECFDF3;
+    color: #039855;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  .stock-item.arrow-down{
+    background-color: #FEF3F2;
+    color: red;
+  }
+  .card-header{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.5rem;
+  }
+  
+  .cards-img{
+    width: 50px;  
+    border-radius: 50%;
+  }
+  .cards-text{
+    margin-left: 0.5rem;
+  }
+
+  .cards-text span{
+    color: rgb(141, 137, 137);
+  }
+  .home-cards{
+    width: 100%;
+  }
   .home-space{
     display: flex;
     justify-content: space-evenly;
+  }
+
+  .linechart{
+    width: 40%;
+    background-color: #fff;
+    padding: 0.5rem;
+    margin: 1rem;
   }

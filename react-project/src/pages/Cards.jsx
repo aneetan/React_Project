@@ -1,12 +1,26 @@
-import { ShoppingCartOutlined } from "@ant-design/icons"
+import { ArrowDownOutlined, ShoppingCartOutlined } from "@ant-design/icons"
 import { Card, Space, Statistic } from "antd"
 
-const Cards = ({title, icon, value}) => {
+const Cards = ({title, icon, value, price, stockIcon, stock}) => {
+    const isArrowDown = stockIcon?.type === ArrowDownOutlined;
     return (
         <Card className="home-cards">
             <Space direction="horizontal">
-                <img className="cards-img" src={icon} alt="icon"  />
-                <Statistic title={title} value={value} />
+                <div className="cards">
+                    <div className="card-header">
+                        <img className="cards-img" src={icon} alt="icon"  />
+                        <div className="cards-text">
+                            <h3 className="cards-title"> {title} </h3>
+                            <span> {value} </span>
+                        </div>
+                    </div>
+                    <div className="card-footer">
+                        <h3> {price} </h3>
+                        <p className={`stock-item ${isArrowDown ? "arrow-down" : ""}`}> {stockIcon} {stock}</p>
+                        
+                    </div>
+                    
+                </div>
             </Space>
         </Card>
     )
